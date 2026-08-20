@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KILLZONE // اعضا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><div class="mark"></div><div class="name">KILL<em>ZONE</em></div></div>
+  <nav class="main">
+    <a href="index.html">خانه</a>
+    <a href="games.html">بازی‌ها</a>
+    <a href="members.html" class="active">اعضا</a>
+    <a href="register.html">ثبت‌نام</a>
+  </nav>
+  <div class="user-box" id="userBox"></div>
+</header>
+
+<main>
+  <div class="section-title top"><span class="idx">// 03</span><h2>اعضای تیم</h2><div class="rule"></div></div>
+
+  <div class="members-toolbar">
+    <p style="color:var(--text-dim); font-size:14px; margin:0;">لیست همه اعضای ثبت‌نام‌شده کیل‌زون، مثل لیست پلیرهای یه سرور.</p>
+    <button class="btn primary small" id="addMemberBtn" style="display:none;">+ افزودن عضو دستی</button>
+  </div>
+
+  <div class="member-grid" id="memberGrid"></div>
+</main>
+
+<footer>
+  <div>© 2026 KillZone Team</div>
+  <div class="credit-badges">
+    <span>رهبر گروه: <b class="ltr">1Y2U3I</b></span>
+    <span>طراح سایت: <b class="ltr">TheROMZ52</b></span>
+  </div>
+</footer>
+
+<div class="overlay" id="loginOverlay">
+  <div class="modal hud"><div class="c2"></div>
+    <button class="close" id="loginClose">✕</button>
+    <h3>ورود به اکانت</h3>
+    <div class="form-grid">
+      <div class="field"><label>نام‌کاربری</label><input type="text" id="loginUser"></div>
+      <div class="field"><label>رمز عبور</label><input type="password" id="loginPass"></div>
+      <button class="btn primary" id="loginSubmit">ورود</button>
+      <div id="loginMsg"></div>
+      <div class="hint">اکانت نداری؟ از پیج «ثبت‌نام» بساز.</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="memberOverlay">
+  <div class="modal hud"><div class="c2"></div>
+    <button class="close" id="memberClose">✕</button>
+    <h3 id="memberModalTitle">ویرایش عضو</h3>
+    <div class="form-grid">
+      <div class="field"><label>نام / یوزرنیم</label><input type="text" id="mName" maxlength="24"></div>
+      <div class="field"><label>لینک عکس (اختیاری)</label><input type="text" id="mPhoto" placeholder="https://..."></div>
+      <div class="field">
+        <label>رنک</label>
+        <select id="mRank">
+          <option value="new_member">عضو جدید</option>
+          <option value="member">عضو</option>
+          <option value="veteran">کهنه‌سرباز</option>
+          <option value="officer">افسر</option>
+          <option value="commander">فرمانده</option>
+          <option value="designer">طراح سایت</option>
+          <option value="leader">رهبر</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>بازی</label>
+        <select id="mGame">
+          <option value="minecraft">ماینکرفت</option>
+          <option value="cod">کالاف‌آف‌دیوتی</option>
+          <option value="both">هر دو</option>
+        </select>
+      </div>
+      <div class="field check">
+        <input type="checkbox" id="mIsAdmin">
+        <label style="margin:0;" for="mIsAdmin">دسترسی مدیریت (ادمین) داشته باشه</label>
+      </div>
+      <div class="field">
+        <label>رمز عبور جدید (اختیاری — فقط برای ریست کردن رمز پر کن)</label>
+        <input type="password" id="mNewPass" placeholder="خالی بذار یعنی رمز عوض نشه">
+      </div>
+      <button class="btn primary" id="memberSave">ذخیره</button>
+      <div id="memberMsg"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

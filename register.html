@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KILLZONE // ثبت‌نام</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><div class="mark"></div><div class="name">KILL<em>ZONE</em></div></div>
+  <nav class="main">
+    <a href="index.html">خانه</a>
+    <a href="games.html">بازی‌ها</a>
+    <a href="members.html">اعضا</a>
+    <a href="register.html" class="active">ثبت‌نام</a>
+  </nav>
+  <div class="user-box" id="userBox"></div>
+</header>
+
+<main>
+  <div class="section-title top"><span class="idx">// 04</span><h2>ثبت‌نام در تیم</h2><div class="rule"></div></div>
+  <p style="color:var(--text-dim); font-size:14.5px; max-width:520px; line-height:1.9;">
+    دقیقاً مثل جوین‌شدن به یه سرور ماینکرفت: یه یوزرنیم و رمز عبور بساز. اکانتت فوراً ساخته می‌شه و با رنک «عضو جدید» وارد لیست اعضا می‌شی.
+    مدیریت تیم بعداً بر اساس فعالیتت رنکت رو ارتقا می‌ده.
+  </p>
+  <form class="form-grid hud" id="regForm" style="margin-top:24px;">
+    <div class="c2"></div>
+    <div class="field">
+      <label>نام‌کاربری (یوزرنیم) *</label>
+      <input type="text" id="regName" required maxlength="24" placeholder="مثلا: Shadow_99">
+    </div>
+    <div class="field">
+      <label>رمز عبور *</label>
+      <input type="password" id="regPass" required minlength="4" maxlength="60" placeholder="حداقل ۴ کاراکتر">
+    </div>
+    <div class="field">
+      <label>تکرار رمز عبور *</label>
+      <input type="password" id="regPass2" required minlength="4" maxlength="60">
+    </div>
+    <div class="field">
+      <label>بازی مورد علاقه *</label>
+      <select id="regGame" required>
+        <option value="minecraft">ماینکرفت</option>
+        <option value="cod">کالاف‌آف‌دیوتی</option>
+        <option value="both">هر دو</option>
+      </select>
+    </div>
+    <button type="submit" class="btn primary">ساخت اکانت و ورود</button>
+    <div id="regMsg"></div>
+  </form>
+</main>
+
+<footer>
+  <div>© 2026 KillZone Team</div>
+  <div class="credit-badges">
+    <span>رهبر گروه: <b class="ltr">1Y2U3I</b></span>
+    <span>طراح سایت: <b class="ltr">TheROMZ52</b></span>
+  </div>
+</footer>
+
+<div class="overlay" id="loginOverlay">
+  <div class="modal hud"><div class="c2"></div>
+    <button class="close" id="loginClose">✕</button>
+    <h3>ورود به اکانت</h3>
+    <div class="form-grid">
+      <div class="field"><label>نام‌کاربری</label><input type="text" id="loginUser"></div>
+      <div class="field"><label>رمز عبور</label><input type="password" id="loginPass"></div>
+      <button class="btn primary" id="loginSubmit">ورود</button>
+      <div id="loginMsg"></div>
+      <div class="hint">اکانت نداری؟ همین‌جا بساز.</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
